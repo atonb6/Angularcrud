@@ -2,7 +2,6 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { Game } from 'src/app/models/Game';
 import { GamesService } from '../../services/games.service';
 import { Router, ActivatedRoute } from '@angular/router'
-import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-game-form',
@@ -13,7 +12,7 @@ export class GameFormComponent implements OnInit {
 
   @HostBinding('class')classes ='row';
 
-  game : Game = {
+  game : any = {
     title: '',
     description: '',
     image: '',
@@ -22,7 +21,8 @@ export class GameFormComponent implements OnInit {
   edit: boolean = false;
 
   constructor(private gamesService: GamesService, private router: Router, private activeRoute: ActivatedRoute) { }
-
+  
+  
   ngOnInit() {
     const params = this.activeRoute.snapshot.params;
     if(params.id){

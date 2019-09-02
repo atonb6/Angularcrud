@@ -10,7 +10,7 @@ import { Game } from 'src/app/models/Game';
 })
 export class GameListComponent implements OnInit {
 
-  games: Any = [];
+  games: any = [];
 
   constructor(private gamesService:GamesService) { }
 
