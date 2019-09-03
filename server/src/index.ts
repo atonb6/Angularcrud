@@ -1,10 +1,15 @@
-import express, {Application,Router} from 'express';
+import express, {
+    Application,
+    Router
+} from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 
 import indexRoutes from './routes/indexroutes';
 import gamesRoutes from './routes/gamesRoutes';
-import { runInThisContext } from 'vm';
+import {
+    runInThisContext
+} from 'vm';
 
 
 class Server {
@@ -21,12 +26,14 @@ class Server {
         this.app.use(morgan('dev'));
         this.app.use(cors());
         this.app.use(express.json());
-        this.app.use(express.urlencoded({extended:false}))
+        this.app.use(express.urlencoded({
+            extended: false
+        }))
     }
 
     routes(): void {
         this.app.use('/', indexRoutes);
-        this.app.use('/api/games',gamesRoutes);
+        this.app.use('/api/games', gamesRoutes);
     }
 
     start(): void {
