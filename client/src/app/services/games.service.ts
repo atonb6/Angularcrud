@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 
 export class GamesService {
 
-  API_URI = 'http://localhost:3000/api';
+  API_URI = 'http://http://ec2-3-15-161-159.us-east-2.compute.amazonaws.com:3000/api';
 
   constructor(private http: HttpClient) { }
 
